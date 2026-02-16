@@ -1,9 +1,10 @@
-package com.tksystem.ecommerceplatform.controller.products;
+package com.tksystem.ecommerceplatform.web.controller.products;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tksystem.ecommerceplatform.controller.common.constants.ViewName;
+import com.tksystem.ecommerceplatform.web.common.constants.ViewName;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 

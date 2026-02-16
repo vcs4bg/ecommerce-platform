@@ -1,4 +1,4 @@
-package com.tksystem.ecommerceplatform.controller.common.constants;
+package com.tksystem.ecommerceplatform.web.common.constants;
 
 public enum ViewName {
 
