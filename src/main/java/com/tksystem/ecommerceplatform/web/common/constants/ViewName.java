@@ -4,7 +4,7 @@ public enum ViewName {
 
     INDEX("root/index"),
     PRODUCT_LIST("products/list"),
-    PRODUCT_EDIT("admin/product-edit");
+    PRODUCT_EDIT("products/edit");
 
     private final String viewName;
 

@@ -1,10 +1,10 @@
-package com.tksystem.ecommerceplatform.web.controller.admin.form;
+package com.tksystem.ecommerceplatform.web.controller.products.form;
 
 import java.math.BigDecimal;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.tksystem.ecommerceplatform.domain.model.entity.admin.ProductEntity;
+import com.tksystem.ecommerceplatform.domain.model.entity.products.ProductEntity;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

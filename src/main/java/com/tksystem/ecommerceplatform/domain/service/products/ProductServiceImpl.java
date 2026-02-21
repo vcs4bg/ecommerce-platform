@@ -1,11 +1,11 @@
-package com.tksystem.ecommerceplatform.domain.service.admin;
+package com.tksystem.ecommerceplatform.domain.service.products;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.tksystem.ecommerceplatform.domain.model.dto.admin.ProductDetailDto;
-import com.tksystem.ecommerceplatform.domain.model.entity.admin.ProductEntity;
-import com.tksystem.ecommerceplatform.domain.repository.admin.ProductRepository;
+import com.tksystem.ecommerceplatform.domain.model.dto.products.ProductDetailDto;
+import com.tksystem.ecommerceplatform.domain.model.entity.products.ProductEntity;
+import com.tksystem.ecommerceplatform.domain.repository.products.ProductRepository;
 
 import lombok.RequiredArgsConstructor;
 

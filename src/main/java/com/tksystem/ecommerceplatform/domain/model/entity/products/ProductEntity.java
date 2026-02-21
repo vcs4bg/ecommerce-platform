@@ -1,4 +1,4 @@
-package com.tksystem.ecommerceplatform.domain.model.entity.admin;
+package com.tksystem.ecommerceplatform.domain.model.entity.products;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

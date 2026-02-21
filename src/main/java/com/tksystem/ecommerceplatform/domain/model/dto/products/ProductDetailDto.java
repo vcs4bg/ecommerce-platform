@@ -1,4 +1,4 @@
-package com.tksystem.ecommerceplatform.domain.model.dto.admin;
+package com.tksystem.ecommerceplatform.domain.model.dto.products;
 
 import org.springframework.web.multipart.MultipartFile;
 
