@@ -30,8 +30,8 @@ public class ProductEntity {
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
-    @Column(name = "image_url", length = 255)
-    private String imageUrl;
+    @Column(name = "file_id")
+    private Long fileId;
 
     @Column(name = "stock", nullable = false)
     private Integer stock = 0;

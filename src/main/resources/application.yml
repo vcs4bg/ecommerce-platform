@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ecommerce-platform
+
+  # PostgreSQL接続設定（アプリケーションロール使用）
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_db?currentSchema=ecommerce
+    username: ecommerce_app
+    password: app_password
+    driver-class-name: org.postgresql.Driver
+
+  # JPA/Hibernate設定
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+        default-schema: ecommerce
+
+app:
+  file:
+    upload:
+      dir: /Users/kawasakitakumi/server
