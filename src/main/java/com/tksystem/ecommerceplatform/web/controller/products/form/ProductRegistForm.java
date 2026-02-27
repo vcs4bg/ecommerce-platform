@@ -30,18 +30,18 @@ public class ProductRegistForm {
     Integer productStatus;
 
     public ProductEntity toEntity() {
+
         return new ProductEntity(
-            productId,
-            productName,
-            description,
-            price,
-            null,
-            stock,
-            categoryId,
-            productStatus,
-            null,
-            null
-        );
+                productId,
+                productName,
+                description,
+                price,
+                null,
+                stock,
+                categoryId,
+                productStatus,
+                null,
+                null);
 
     }
 

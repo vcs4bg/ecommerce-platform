@@ -35,7 +35,7 @@ public class FileStorageServiceImpl implements FileStorageService {
     }
 
     private Long saveFileInternal(MultipartFile file, Path saveDir) {
-        // ファイル保存する→ファイル管理テーブルに登録する。
+
         try {
             // 引数チェック
             if (file.isEmpty()) {
@@ -72,6 +72,7 @@ public class FileStorageServiceImpl implements FileStorageService {
             throw new RuntimeException("ファイルの保存に失敗しました。", e);
 
         }
+
     }
 
 }
