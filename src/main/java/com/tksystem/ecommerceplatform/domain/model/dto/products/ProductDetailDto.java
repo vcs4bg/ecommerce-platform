@@ -1,16 +1,14 @@
-package com.tksystem.ecommerceplatform.controller.admin.form;
+package com.tksystem.ecommerceplatform.domain.model.dto.products;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class ProductRegistForm {
+public class ProductDetailDto {
 
     Integer productId;
 
-    @NotNull
     String productName;
 
     String description;
