@@ -1,11 +1,22 @@
-<div layout:decorate="~{layout/layout}">
-    <div layout:fragment="content">
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout/layout :: common_head('ホーム')}"></head>
+
+<body>
+    <nav th:replace="~{layout/layout :: common_nav}"></nav>
+
+    <div class="container mt-5">
         <div>
             <h1 class="display-4">ようこそ、ECサイトへ！</h1>
             <p class="lead">ここはサンプルのECサイトです。Bootstrapでデザインされています。</p>
             <hr class="my-4">
             <p>商品一覧からお好きな商品をお選びください。</p>
-            <a class="btn btn-primary btn-lg" role="button">商品一覧を見る</a>
+            <a th:href="@{/products}" class="btn btn-primary btn-lg" role="button">商品一覧を見る</a>
         </div>
     </div>
-</div>
+
+    <th:block th:replace="~{layout/layout :: common_scripts}"></th:block>
+</body>
+
+</html>

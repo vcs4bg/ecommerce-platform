@@ -1,4 +1,5 @@
 #!/bin/bash
+export PGCLIENTENCODING=UTF8
 
 # PostgreSQL接続情報（スーパーユーザー）
 DB_USER="postgres"

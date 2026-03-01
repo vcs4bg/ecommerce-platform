@@ -12,6 +12,7 @@ import com.tksystem.ecommerceplatform.web.common.constants.ViewName;
 import com.tksystem.ecommerceplatform.web.controller.products.form.ProductRegistForm;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @RequestMapping("/products")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductEditController {
 
     private final ProductService service;
@@ -45,12 +47,18 @@ public class ProductEditController {
             BindingResult result,
             Model model) {
 
+        log.info("registProductを開始");
+
         if (result.hasErrors()) {
             model.addAttribute("isCreate", form.getProductId() == null);
             return ViewName.PRODUCT_EDIT.forward();
         }
 
+        log.info("チェックエラーなし");
+
         ProductEntity product = service.saveProduct(form.toEntity(), form.getImageFile());
+
+        log.info("商品登録完了");
 
         // TODO: 遷移先は編集画面ではなく商品詳細画面にする
         return ViewName.PRODUCT_EDIT.redirect(product.getProductId().toString());

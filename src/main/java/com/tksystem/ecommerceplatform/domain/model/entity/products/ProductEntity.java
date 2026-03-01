@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -29,9 +28,6 @@ public class ProductEntity {
 
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
-
-    @Column(name = "file_id")
-    private Long fileId;
 
     @Column(name = "stock", nullable = false)
     private Integer stock = 0;

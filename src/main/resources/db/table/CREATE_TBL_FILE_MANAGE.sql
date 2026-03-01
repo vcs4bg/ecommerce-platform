@@ -9,8 +9,6 @@ CREATE TABLE TBL_FILE_MANAGE (
 	deleted_at          TIMESTAMP
 );
 
-CREATE INDEX idx_created_at ON TBL_FILE_MANAGE(created_at);
-
 COMMENT ON TABLE TBL_FILE_MANAGE IS 'ファイル管理テーブル';
 COMMENT ON COLUMN TBL_FILE_MANAGE.file_id IS 'ファイルID';
 COMMENT ON COLUMN TBL_FILE_MANAGE.original_filename IS '元ファイル名';

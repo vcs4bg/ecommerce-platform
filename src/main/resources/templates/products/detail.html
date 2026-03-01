@@ -1,5 +1,12 @@
-<div layout:decorate="~{layout/layout}">
-	<div layout:fragment="content">
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout/layout :: common_head('商品詳細')}"></head>
+
+<body>
+	<nav th:replace="~{layout/layout :: common_nav}"></nav>
+
+	<div class="container mt-5">
 		<h1 class="mb-4">商品詳細</h1>
 		<div class="card">
 			<div class="card-body">
@@ -36,7 +43,9 @@
 				</div>
 				<div class="mb-3">
 					<label class="form-label fw-bold">商品ステータス</label>
-					<p class="form-control-plaintext" th:text="${product?.productStatus == 1} ? '表示' : ${product?.productStatus == 0} ? '非表示' : '販売終了'"></p>
+					<p class="form-control-plaintext"
+						th:text="${product?.productStatus == 1} ? '表示' : ${product?.productStatus == 0} ? '非表示' : '販売終了'">
+					</p>
 				</div>
 				<div class="d-flex justify-content-end gap-2">
 					<a th:href="@{/products/list}" class="btn btn-secondary">一覧に戻る</a>
@@ -45,4 +54,8 @@
 			</div>
 		</div>
 	</div>
-</div>
+
+	<th:block th:replace="~{layout/layout :: common_scripts}"></th:block>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 package com.tksystem.ecommerceplatform.web.controller.products.form;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,7 +22,7 @@ public class ProductRegistForm {
 
     BigDecimal price;
 
-    MultipartFile imageFile;
+    List<MultipartFile> imageFile;
 
     Integer stock;
 
@@ -36,7 +37,6 @@ public class ProductRegistForm {
                 productName,
                 description,
                 price,
-                null,
                 stock,
                 categoryId,
                 productStatus,

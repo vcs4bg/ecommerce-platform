@@ -4,7 +4,8 @@ public enum ViewName {
 
     INDEX("root/index"),
     PRODUCT_LIST("products/list"),
-    PRODUCT_EDIT("products/edit");
+    PRODUCT_EDIT("products/edit"),
+    ERROR("error/error");
 
     private final String viewName;
 
@@ -27,6 +28,7 @@ public enum ViewName {
     public String redirect() {
         return redirect(null);
     }
+
     public String redirect(String param) {
         if (param == null) {
             return "redirect:/" + viewName;
