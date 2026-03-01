@@ -2,6 +2,13 @@ spring:
   application:
     name: ecommerce-platform
 
+  # ファイルアップロード設定
+  servlet:
+    multipart:
+      max-file-size: 30MB      # フルサイズミラーレスカメラのJPEG高画質に対応
+      max-request-size: 350MB  # 10枚同時アップロード想定（30MB × 10枚 + マージン）
+      enabled: true
+
   # PostgreSQL接続設定（アプリケーションロール使用）
   datasource:
     url: jdbc:postgresql://localhost:5432/ecommerce_db?currentSchema=ecommerce

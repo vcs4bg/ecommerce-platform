@@ -39,16 +39,21 @@ public class ProductServiceImpl implements ProductService {
         // 商品マスタ登録
         ProductEntity savedProduct = repository.save(product);
 
-        if (imageFileList.isEmpty()) {
+        // 空のファイルを除外して有効なファイルのみを抽出
+        List<MultipartFile> validFiles = imageFileList.stream()
+                .filter(file -> file != null && !file.isEmpty())
+                .toList();
+
+        if (validFiles.isEmpty()) {
             return savedProduct;
         }
 
         List<ProductFileEntity> relationList = new ArrayList<ProductFileEntity>();
 
         // 画像ファイルの保存
-        for (int i = 0; i < imageFileList.size(); i++) {
+        for (int i = 0; i < validFiles.size(); i++) {
 
-            Long fileId = fileStorageService.saveFile(imageFileList.get(i), "Product/");
+            Long fileId = fileStorageService.saveFile(validFiles.get(i), "Product/" + savedProduct.getProductId().toString());
 
             ProductFileEntity relation = new ProductFileEntity(
                     savedProduct.getProductId(),

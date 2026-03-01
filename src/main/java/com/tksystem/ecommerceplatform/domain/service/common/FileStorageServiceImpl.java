@@ -49,8 +49,7 @@ public class FileStorageServiceImpl implements FileStorageService {
 
             // ファイルの保存
             String extention = StringUtils.getFilenameExtension(file.getOriginalFilename());
-            Path filePath = saveDir.resolve(UUID.randomUUID().toString())
-                    .resolve(extention);
+            Path filePath = saveDir.resolve(UUID.randomUUID().toString() + "." + extention);
             file.transferTo(filePath);
 
             // ファイル管理テーブル登録
@@ -58,8 +57,8 @@ public class FileStorageServiceImpl implements FileStorageService {
                     null,
                     file.getOriginalFilename(),
                     filePath.toString(),
-                    null,
-                    null,
+                    file.getSize(),
+                    extention,
                     LocalDateTime.now(),
                     LocalDateTime.now(),
                     null);
@@ -69,7 +68,7 @@ public class FileStorageServiceImpl implements FileStorageService {
 
         } catch (IOException e) {
 
-            throw new RuntimeException("ファイルの保存に失敗しました。", e);
+            throw new RuntimeException("ファイルの保存に失敗しました。: " + e.getMessage(), e);
 
         }
 
