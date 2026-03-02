@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.tksystem.ecommerceplatform.domain.model.dto.products.ProductDetailDto;
+import com.tksystem.ecommerceplatform.domain.model.dto.products.ProductListDto;
 import com.tksystem.ecommerceplatform.domain.model.entity.products.ProductEntity;
 import com.tksystem.ecommerceplatform.domain.model.entity.products.ProductFileEntity;
 import com.tksystem.ecommerceplatform.domain.repository.products.ProductFileRepository;
@@ -25,6 +26,15 @@ public class ProductServiceImpl implements ProductService {
     private final ProductFileRepository relationRepository;
 
     private final FileStorageService fileStorageService;
+
+    @Override
+    public List<ProductListDto> getList() {
+
+        List<ProductListDto> list = repository.getList();
+
+        return list;
+
+    }
 
     @Override
     public ProductDetailDto getProductDetail(int productId) {
